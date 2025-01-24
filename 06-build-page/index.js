@@ -88,7 +88,7 @@ async function createHtmlBundle(
   try {
     const templateSource = await readFile(path.join(__dirname, template));
     let resultTemplateSource = templateSource.toString();
-    const templateComponents = resultTemplateSource.match(/{{(.*)}}/gi);
+    const templateComponents = resultTemplateSource.match(/{{(.*?)}}/gi);
 
     if (templateComponents) {
       for await (const component of templateComponents) {
